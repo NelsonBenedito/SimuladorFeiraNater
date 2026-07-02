@@ -27,7 +27,7 @@
         
         <section class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-fit space-y-6">
             <h2 class="text-xl font-bold text-gray-900 border-b pb-2 flex items-center gap-2">
-                ⚙️ Configurar Proposta
+                ⚙ shrink-0 Proposta
             </h2>
 
             <div>
@@ -43,14 +43,14 @@
             <div>
                 <label for="condicao-select" class="block text-sm font-semibold text-gray-700 mb-2">2. Condição de Pagamento</label>
                 <select id="condicao-select" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium">
-                    <option value="nater_6x">FEIRA NATER 6X (À Vista)</option>
-                    <option value="nater_30d">FEIRA NATER 30 DIAS</option>
-                    <option value="nater_60d">FEIRA NATER 60 DIAS</option>
-                    <option value="nater_90d">FEIRA NATER 90 DIAS</option>
-                    <option value="nater_120d">FEIRA NATER 120 DIAS</option>
-                    <option value="nater_ex">FEIRA NATER EX</option>
-                    <option value="nater_50_50">NATER 50% / 50% (Nov/26 e Mai/27)</option>
-                    <option value="banco">CONVÊNIOS BANCÁRIOS (Sicoob/BB/etc)</option>
+                    <option value="nater_6x">357 - FEIRA NATER 6X (À Vista)</option>
+                    <option value="nater_30d">509 - FEIRA NATER 30 DIAS</option>
+                    <option value="nater_60d">510 - FEIRA NATER 60 DIAS</option>
+                    <option value="nater_90d">511 - FEIRA NATER 90 DIAS</option>
+                    <option value="nater_120d">512 - FEIRA NATER 120 DIAS</option>
+                    <option value="nater_ex">357 - FEIRA NATER EX</option>
+                    <option value="nater_50_50">518 - FEIRA NATER 50% (30/11/26) E 50% (30/05/27)</option>
+                    <option value="banco">CONVÊNIOS BANCÁRIOS (Sicoob/BB/Cresol/Banestes/Sicredi)</option>
                 </select>
             </div>
 
@@ -72,11 +72,11 @@
                 <div class="space-y-2 bg-blue-50/50 p-3 rounded-lg border border-blue-200">
                     <span class="text-xs font-bold text-blue-800 uppercase tracking-wider block">Misturadores Damek</span>
                     <label class="flex items-center gap-3 cursor-pointer p-1 hover:bg-blue-100/50 rounded">
-                        <input type="checkbox" id="check-damek120" class="w-4 h-4 text-blue-600 rounded input-damek">
+                        <input type="checkbox" id="check-damek120" class="w-4 h-4 text-blue-600 rounded">
                         <span class="text-sm font-medium">Misturador Damek 120L</span>
                     </label>
                     <label class="flex items-center gap-3 cursor-pointer p-1 hover:bg-blue-100/50 rounded">
-                        <input type="checkbox" id="check-damek200" class="w-4 h-4 text-blue-600 rounded input-damek">
+                        <input type="checkbox" id="check-damek200" class="w-4 h-4 text-blue-600 rounded">
                         <span class="text-sm font-medium">Misturador Damek 200L</span>
                     </label>
                 </div>
@@ -135,7 +135,7 @@
     </main>
 
     <script>
-        // BANCO DE DADOS INTEGRADO DA FEIRA (CONSOLIDAÇÃO DOS PDFs)
+        // BANCO DE DADOS INTEGRADO E REVISADO COM OS PREÇOS EXATOS DAS ABAS XLSX
         const MATRIZ_PRECOS = {
             // Kit Agras T25P
             "57250": { nome: "DRONE DJI AGRAS T25P", nater_6x: 50800.00, nater_30d: 51917.60, nater_60d: 53060.60, nater_90d: 54229.00, nater_120d: 55417.72, nater_ex: 54818.28, nater_50_50: 59044.84, banco: 60198.00 },
@@ -148,7 +148,7 @@
             "57251": { nome: "DRONE DJI AGRAS T70P", nater_6x: 76200.00, nater_30d: 77876.40, nater_60d: 79590.90, nater_90d: 81343.50, nater_120d: 83126.58, nater_ex: 82227.42, nater_50_50: 92704.92, banco: 90297.00 },
             "57259": { nome: "BATERIA P/ DRONE AGRAS T70P", nater_6x: 22860.00, nater_30d: 23362.92, nater_60d: 23877.27, nater_90d: 24403.05, nater_120d: 24937.97, nater_ex: 24668.23, nater_50_50: 26570.18, banco: 27089.10 },
             "57262": { nome: "CARREGADOR BATERIA P/ DRONE AGRAS T70P", nater_6x: 15240.00, nater_30d: 15575.28, nater_60d: 15918.18, nater_90d: 16268.70, nater_120d: 16625.32, nater_ex: 16445.48, nater_50_50: 17713.45, banco: 18112.74 },
-            "57293": { nome: "DISPERSOR SOLIDO P/ DRONE AGRAS T70P", nater_6x: 8762.50, nater_30d: 8955.28, nater_60d: 9152.43, nater_90d: 9353.97, nater_120d: 9559.01, nater_ex: 9455.61, nater_50_50: 10184.65, banco: 10383.56 },
+            "57293": { nome: "DISPERSOR SOLIDO P/ DRONE AGRAS T70P", nater_6x: 8762.50, nater_30d: 8955.28, nater_60d: 9152.43, nater_90d: 9353.96, nater_120d: 9559.01, nater_ex: 9455.61, nater_50_50: 10184.65, banco: 10383.56 },
             
             // Kit Agras T100 / T100P
             "57252": { nome: "DRONE DJI AGRAS T100", nater_6x: 116737.00, nater_30d: 119305.21, nater_60d: 121931.80, nater_90d: 124616.75, nater_120d: 127348.39, nater_ex: 125970.90, nater_50_50: 135683.42, banco: 138333.35 },
@@ -167,7 +167,7 @@
             "56279": { nome: "MISTURADOR DAMEK 120L", nater_6x: 2950.00, nater_30d: 3014.90, nater_60d: 3081.28, nater_90d: 3149.13, nater_120d: 3218.16, nater_ex: 3183.35, nater_50_50: 3495.75, banco: 3368.02 }
         };
 
-        // MAPEAMENTO DA COMPOSIÇÃO DOS KITS
+        // COMPOSIÇÃO DOS KITS
         const COMPOSICAO_KITS = {
             "T25P": {
                 basico: [
@@ -192,7 +192,6 @@
             }
         };
 
-        // ELEMENTOS DA DOM
         const elDrone = document.getElementById('drone-select');
         const elCondicao = document.getElementById('condicao-select');
         const elDispersor = document.getElementById('check-dispersor');
@@ -207,12 +206,10 @@
         const cardAdicionais = document.getElementById('total-adicionais-card');
         const cardGeral = document.getElementById('total-geral-card');
 
-        // FORMATADOR MONETÁRIO
         function formatBRL(valor) {
             return valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
 
-        // FUNÇÃO PRINCIPAL DE RENDERIZAÇÃO E CÁLCULO
         function calcularSimulacao() {
             const droneKey = elDrone.value;
             const condicao = elCondicao.value;
@@ -256,7 +253,7 @@
                     <td class="p-2 text-right text-sm text-emerald-900">${formatBRL(subtotalBasico)}</td>
                 </tr>`;
 
-            // 2. RENDERIZAR ACESSÓRIOS / COMPLEMENTOS DO MODELO
+            // 2. RENDERIZAR ACESSÓRIOS / COMPLEMENTOS
             let temAcessorios = elDispersor.checked || elGerador.checked;
             if (temAcessorios) {
                 htmlOutput += `<tr class="bg-lime-600 text-white font-bold border-b border-black text-sm"><td colspan="5" class="p-2">${kitDef.nome_acc}</td></tr>`;
@@ -282,7 +279,7 @@
                     </tr>`;
             }
 
-            // 3. RENDERIZAR IMPLEMENTOS EXTRA (MISTURADORES DAMEK)
+            // 3. RENDERIZAR IMPLEMENTOS DAMEK
             let subtotalDamek = 0;
             if (elDamek120.checked || elDamek200.checked) {
                 htmlOutput += `<tr class="bg-blue-600 text-white font-bold border-b border-black text-sm"><td colspan="5" class="p-2">Implementos Extra</td></tr>`;
@@ -305,10 +302,7 @@
                     </tr>`;
             }
 
-            // ATUALIZAR TABELA INTERNA
             elCorpoTabela.innerHTML = htmlOutput;
-
-            // ATUALIZAR CARDS DE RESUMO
             cardBasico.innerText = `R$ ${formatBRL(subtotalBasico)}`;
             cardAdicionais.innerText = `R$ ${formatBRL(subtotalAdicionais + subtotalDamek)}`;
             cardGeral.innerText = `R$ ${formatBRL(subtotalBasico + subtotalAdicionais + subtotalDamek)}`;
@@ -325,7 +319,6 @@
                 </tr>`;
         }
 
-        // SCRIPT DO BOTÃO COPIAR WHATSAPP
         document.getElementById('btn-copiar').addEventListener('click', () => {
             const droneName = elDrone.options[elDrone.selectedIndex].text;
             const condName = elCondicao.options[elCondicao.selectedIndex].text;
@@ -353,7 +346,6 @@
             });
         });
 
-        // OUVINTES DE EVENTO PARA ATUALIZAÇÃO EM TEMPO REAL
         [elDrone, elCondicao, elDispersor, elGerador, elDamek120, elDamek200].forEach(el => {
             el.addEventListener('change', calcularSimulacao);
         });
