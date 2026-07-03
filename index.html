@@ -3,193 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Vendas - Drones Nater Coop 2026</title>
+    <title>Simulador de Vendas - Feira Agro Nater Coop 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        .branding-green { background-color: #00FF00; }
-        .branding-dark-green { background-color: #70AD47; }
-        .bg-navy { background-color: #002060; }
+        :root {
+            --nater-green: #00a859;
+            --nater-dark-green: #006837;
+            --corporate-navy: #002060;
+            --soft-gray: #f8fafc;
+            --accent-lime: #deff9a;
+        }
+        body { background-color: #e2e8f0; font-family: 'Lato', sans-serif; margin: 0; min-height: 100vh; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+        .app-header {
+            background-image: linear-gradient(rgba(0, 168, 89, 0.1), rgba(0, 104, 55, 0.4)), url('https://imgur.com/vHq0X6W.png');
+            background-size: cover; background-position: center; height: 180px;
+            display: flex; align-items: center; justify-content: center;
+            border-bottom: 4px solid var(--accent-lime); box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .header-content { background: rgba(255, 255, 255, 0.9); padding: 15px 40px; border-radius: 50px; text-align: center; backdrop-filter: blur(5px); }
+        .header-content h1 { color: var(--corporate-navy); font-size: 26px; font-weight: 700; margin: 0; }
+        .glass-card { background: #ffffff; border-radius: 16px; border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
+        .btn-primary { background-color: var(--nater-green); transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: var(--nater-dark-green); transform: translateY(-2px); }
+        .proposal-table th { background-color: #f1f5f9; color: #475569; text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em; }
+        .row-drone { background-color: #dcfce7; font-weight: 700; }
+        .row-acc { background-color: #fef9c3; font-weight: 700; }
     </style>
 </head>
-<body class="bg-gray-100 font-sans min-h-screen text-gray-800">
+<body>
 
-    <header class="bg-navy text-white py-6 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-bold tracking-tight">SIMULADOR DE VENDAS</h1>
-                <p class="text-sm text-gray-300">Feira Agropecuária 2026 — Espírito Santo</p>
-            </div>
-            <span class="bg-green-600 text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Modo Feira Ativo</span>
+    <header class="app-header">
+        <div class="header-content">
+            <h1>SIMULADOR DE VENDAS 2026</h1>
+            <p class="text-sm font-semibold text-green-700">CAMPANHA EXPANDIDA — NATER COOP</p>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <main class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
         
-        <section class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-fit space-y-6  shrink-0 ">
-            <h2 class="text-xl font-bold text-gray-900 border-b pb-2 flex items-center gap-2">
-                ⚙ Proposta
-            </h2>
+        <aside class="lg:col-span-5 space-y-6">
+            <section class="glass-card p-6 border-t-4 border-green-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-green-600"></i> Painel de Negociação
+                </h2>
 
-            <div>
-                <label for="drone-select" class="block text-sm font-semibold text-gray-700 mb-2">1. Escolha o Modelo do Drone</label>
-                <select id="drone-select" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium">
-                    <option value="">-- Selecione um Drone --</option>
-                    <option value="T25P">DJI Agras T25P</option>
-                    <option value="T70P">DJI Agras T70P</option>
-                    <option value="T100">DJI Agras T100</option>
-                </select>
-            </div>
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-2">1. Equipamento Agras</label>
+                        <select id="drone-select" class="w-full bg-soft-gray border border-gray-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-green-500 font-medium">
+                            <option value="">Selecione o Modelo</option>
+                            <option value="T25P">DJI Agras T25P</option>
+                            <option value="T70P">DJI Agras T70P</option>
+                            <option value="T100">DJI Agras T100</option>
+                        </select>
+                    </div>
 
-            <div>
-                <label for="condicao-select" class="block text-sm font-semibold text-gray-700 mb-2">2. Condição de Pagamento</label>
-                <select id="condicao-select" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium">
-                    <option value="nater_6x">357 - FEIRA NATER 6X (À Vista)</option>
-                    <option value="nater_30d">509 - FEIRA NATER 30 DIAS</option>
-                    <option value="nater_60d">510 - FEIRA NATER 60 DIAS</option>
-                    <option value="nater_90d">511 - FEIRA NATER 90 DIAS</option>
-                    <option value="nater_120d">512 - FEIRA NATER 120 DIAS</option>
-                    <option value="nater_ex">357 - FEIRA NATER EX</option>
-                    <option value="nater_50_50">518 - FEIRA NATER 50% (30/11/26) E 50% (30/05/27)</option>
-                    <option value="banco">CONVÊNIOS BANCÁRIOS (Sicoob/BB/Cresol/Banestes/Sicredi)</option>
-                </select>
-            </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-2">2. Condição Comercial Completa</label>
+                        <select id="condicao-select" class="w-full bg-soft-gray border border-gray-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm font-medium">
+                            <optgroup label="Faturamento Direto Nater (Prazos Padrão)">
+                                <option value="nater_6x">357 - FEIRA NATER 6X (À Vista/Melhor Taxa)</option>
+                                <option value="nater_7d">508 - FEIRA NATER 7 DIAS</option>
+                                <option value="nater_30d">509 - FEIRA NATER 30 DIAS</option>
+                                <option value="nater_60d">510 - FEIRA NATER 60 DIAS</option>
+                                <option value="nater_90d">511 - FEIRA NATER 90 DIAS</option>
+                                <option value="nater_120d">512 - FEIRA NATER 120 DIAS</option>
+                                <option value="nater_ex">357 - FEIRA NATER EX</option>
+                            </optgroup>
+                            <optgroup label="Faturamento Futuro / Parcelados (Safras)">
+                                <option value="nater_30_05_27">514 - FEIRA NATER 30/05/2027</option>
+                                <option value="nater_30_07_27">515 - FEIRA NATER 30/07/2027</option>
+                                <option value="nater_10_90_safra1">516 - FEIRA NATER 10% (30/07/26) E 90% (30/05/27)</option>
+                                <option value="nater_10_90_safra2">517 - FEIRA NATER 10% (30/07/26) E 90% (30/07/27)</option>
+                                <option value="nater_50_50">518 - FEIRA NATER 50% (30/11/26) E 50% (30/05/27)</option>
+                                <option value="nater_50_50_safra2">519 - FEIRA NATER 50% (30/11/26) E 50% (30/07/27)</option>
+                            </optgroup>
+                            <optgroup label="Linhas de Crédito Externas">
+                                <option value="banco">CONVÊNIOS BANCÁRIOS (Sicoob/BB/Cresol/Banestes/Sicredi)</option>
+                            </optgroup>
+                        </select>
+                    </div>
 
-            <div class="space-y-3">
-                <label class="block text-sm font-semibold text-gray-700">3. Adicionais & Implementos</label>
-                
-                <div class="space-y-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <label class="flex items-center gap-3 cursor-pointer p-1 hover:bg-gray-100 rounded">
-                        <input type="checkbox" id="check-dispersor" class="w-4 h-4 text-blue-600 rounded">
-                        <span class="text-sm font-medium">Incluir Dispersor Sólido do modelo</span>
-                    </label>
+                    <div class="pt-2 space-y-3">
+                        <label class="block text-xs font-bold text-gray-500 uppercase">3. Acessórios inclusos</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <label class="flex items-center gap-2 p-3 border rounded-xl hover:bg-green-50 cursor-pointer">
+                                <input type="checkbox" id="check-dispersor" class="accent-green-600">
+                                <span class="text-xs font-semibold text-gray-700">Dispersor</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 border rounded-xl hover:bg-green-50 cursor-pointer">
+                                <input type="checkbox" id="check-gerador" class="accent-green-600">
+                                <span class="text-xs font-semibold text-gray-700">Gerador</span>
+                            </label>
+                        </div>
+                    </div>
 
-                    <label class="flex items-center gap-3 cursor-pointer p-1 hover:bg-gray-100 rounded">
-                        <input type="checkbox" id="check-gerador" class="w-4 h-4 text-blue-600 rounded">
-                        <span class="text-sm font-medium">Incluir Gerador Kawashima correspondente</span>
-                    </label>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-2">4. Misturadores Damek</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <label class="flex items-center gap-2 p-3 border rounded-xl hover:bg-blue-50 cursor-pointer">
+                                <input type="checkbox" id="check-damek120" class="accent-blue-600">
+                                <span class="text-xs font-bold">Damek 120L</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 border rounded-xl hover:bg-blue-50 cursor-pointer">
+                                <input type="checkbox" id="check-damek200" class="accent-blue-600">
+                                <span class="text-xs font-bold">Damek 200L</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="space-y-2 bg-blue-50/50 p-3 rounded-lg border border-blue-200">
-                    <span class="text-xs font-bold text-blue-800 uppercase tracking-wider block">Misturadores Damek</span>
-                    <label class="flex items-center gap-3 cursor-pointer p-1 hover:bg-blue-100/50 rounded">
-                        <input type="checkbox" id="check-damek120" class="w-4 h-4 text-blue-600 rounded">
-                        <span class="text-sm font-medium">Misturador Damek 120L</span>
-                    </label>
-                    <label class="flex items-center gap-3 cursor-pointer p-1 hover:bg-blue-100/50 rounded">
-                        <input type="checkbox" id="check-damek200" class="w-4 h-4 text-blue-600 rounded">
-                        <span class="text-sm font-medium">Misturador Damek 200L</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="pt-2 space-y-2">
-                <button id="btn-copiar" class="w-full bg-navy hover:bg-blue-900 text-white font-bold py-3 px-4 rounded-lg transition shadow flex justify-center items-center gap-2">
-                    📋 Copiar Resumo para WhatsApp
+                <button id="btn-copiar" class="w-full btn-primary text-white font-bold py-4 px-4 rounded-xl shadow-lg mt-6 flex justify-center items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> COPIAR PROPOSTA
                 </button>
+            </section>
+        </aside>
+
+        <div class="lg:col-span-7 space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card p-4 border-l-4 border-navy">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase">Subtotal Kit</p>
+                    <p id="total-basico-card" class="text-xl font-bold text-corporate-navy">R$ 0,00</p>
+                </div>
+                <div class="glass-card p-4 border-l-4 border-yellow-400">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase">Opcionais</p>
+                    <p id="total-adicionais-card" class="text-xl font-bold text-gray-700">R$ 0,00</p>
+                </div>
+                <div class="glass-card p-4 border-l-4 border-green-500 bg-green-900">
+                    <p class="text-[10px] font-bold text-green-200 uppercase">Pedido Fechado</p>
+                    <p id="total-geral-card" class="text-xl font-bold text-white">R$ 0,00</p>
+                </div>
             </div>
-        </section>
 
-        <section class="lg:col-span-2 space-y-6">
-            
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-left">
-                <div class="border-b md:border-b-0 md:border-r border-gray-200 pb-3 md:pb-0 md:pr-4">
-                    <p class="text-xs font-bold text-gray-500 uppercase">Subtotal Kit Básico</p>
-                    <p id="total-basico-card" class="text-xl font-extrabold text-gray-900">R$ 0,00</p>
-                </div>
-                <div class="border-b md:border-b-0 md:border-r border-gray-200 pb-3 md:pb-0 md:pr-4">
-                    <p class="text-xs font-bold text-gray-500 uppercase">Adicionais/Implementos</p>
-                    <p id="total-adicionais-card" class="text-xl font-extrabold text-gray-900">R$ 0,00</p>
-                </div>
-                <div class="pt-2 md:pt-0">
-                    <p class="text-xs font-bold text-blue-800 uppercase">Valor Total do Pedido</p>
-                    <p id="total-geral-card" class="text-2xl font-black text-blue-900">R$ 0,00</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <div class="p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center">
-                    <h3 class="font-bold text-gray-800">Espelho da Proposta Comercial</h3>
-                    <div id="status-placeholder" class="text-sm font-medium text-gray-500 italic">Nenhum drone selecionado</div>
+            <div class="glass-card overflow-hidden">
+                <div class="p-4 bg-gray-50 border-b flex justify-between items-center">
+                    <h3 class="font-bold text-gray-700 text-sm">
+                        <i class="fa-solid fa-file-invoice-dollar text-green-600"></i> Detalhamento
+                    </h3>
+                    <div id="status-placeholder" class="text-[10px] font-bold bg-green-100 text-green-700 px-3 py-1 rounded-full uppercase">Aguardando Seleção</div>
                 </div>
 
-                <div class="p-4 overflow-x-auto">
-                    <table class="w-full border-collapse border border-black min-w-[600px]" id="tabela-proposta">
+                <div class="overflow-x-auto">
+                    <table class="w-full proposal-table" id="tabela-proposta">
                         <thead>
-                            <tr class="bg-gray-200 font-bold text-center border-b border-black">
-                                <th class="p-2 border-r border-black w-[12%] text-xs">COD</th>
-                                <th class="p-2 border-r border-black w-[50%] text-left text-xs">ITEM</th>
-                                <th class="p-2 border-r border-black w-[8%] text-xs">QTD</th>
-                                <th class="p-2 border-r border-black w-[15%] text-right text-xs">PREÇO UNIT.</th>
-                                <th class="p-2 text-right text-xs">PREÇO TOTAL</th>
+                            <tr class="text-left border-b text-xs">
+                                <th class="p-3">Cód</th>
+                                <th class="p-3">Item</th>
+                                <th class="p-3 text-center">Qtd</th>
+                                <th class="p-3 text-right">Unitário</th>
+                                <th class="p-3 text-right">Subtotal</th>
                             </tr>
                         </thead>
                         <tbody id="tabela-corpo">
                             <tr>
-                                <td colspan="5" class="p-8 text-center text-gray-400 italic bg-gray-50">Selecione as opções ao lado para gerar o espelho da proposta.</td>
+                                <td colspan="5" class="p-16 text-center text-gray-300 italic text-sm">
+                                    Selecione o Drone e a Condição Comercial para processar.
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <script>
-        // BANCO DE DADOS INTEGRADO E REVISADO COM OS PREÇOS EXATOS DAS ABAS XLSX
+        // BASE DE PREÇOS INTEGRAL DE TODAS AS 13 COLUNAS DO CORPO DE DADOS XLSX
         const MATRIZ_PRECOS = {
-            // Kit Agras T25P
-            "57250": { nome: "DRONE DJI AGRAS T25P", nater_6x: 50800.00, nater_30d: 51917.60, nater_60d: 53060.60, nater_90d: 54229.00, nater_120d: 55417.72, nater_ex: 54818.28, nater_50_50: 59044.84, banco: 60198.00 },
-            "57258": { nome: "BATERIA P/ DRONE AGRAS T25P", nater_6x: 11430.00, nater_30d: 11681.46, nater_60d: 11938.64, nater_90d: 12201.53, nater_120d: 12468.99, nater_ex: 12334.11, nater_50_50: 13285.09, banco: 13544.55 },
-            "57261": { nome: "CARREGADOR BATERIA P/ DRONE AGRAS T25P", nater_6x: 11430.00, nater_30d: 11681.46, nater_60d: 11938.64, nater_90d: 12201.53, nater_120d: 12468.99, nater_ex: 12334.11, nater_50_50: 13285.09, banco: 13544.55 },
-            "57292": { nome: "DISPERSOR SOLIDO P/ DRONE AGRAS T25P", nater_6x: 7875.00, nater_30d: 8048.25, nater_60d: 8225.44, nater_90d: 8406.56, nater_120d: 8590.84, nater_ex: 8497.91, nater_50_50: 9153.11, banco: 9331.88 },
-            "39740": { nome: "GERADOR KAWASHIMA GAS.MONO/BIV.GG10000", nater_6x: 6237.21, nater_30d: 6374.43, nater_60d: 6514.76, nater_90d: 6658.22, nater_120d: 6804.17, nater_ex: 6730.57, nater_50_50: 7249.51, banco: 7391.09 },
+            "57250": { nome: "DRONE DJI AGRAS T25P", nater_7d:49022.00, nater_30d:51917.60, nater_60d:53060.60, nater_90d:54229.00, nater_120d:55417.72, nater_6x:50800.00, nater_30_05_27:59842.40, nater_30_07_27:61417.20, nater_10_90_safra1:59334.80, nater_10_90_safra2:60706.80, nater_50_50:57049.20, nater_50_50_safra2:58115.60, nater_ex:54818.28, banco:60198.00 },
+            "57258": { nome: "BATERIA P/ DRONE AGRAS T25P", nater_7d:11029.95, nater_30d:11681.46, nater_60d:11938.64, nater_90d:12201.53, nater_120d:12468.99, nater_6x:11430.00, nater_30_05_27:13464.54, nater_30_07_27:13818.87, nater_10_90_safra1:13350.33, nater_10_90_safra2:13659.03, nater_50_50:12835.89, nater_50_50_safra2:13075.83, nater_ex:12334.11, banco:13544.55 },
+            "57261": { nome: "CARREGADOR T25P", nater_7d:11029.95, nater_30d:11681.46, nater_60d:11938.64, nater_90d:12201.53, nater_120d:12468.99, nater_6x:11430.00, nater_30_05_27:13464.54, nater_30_07_27:13818.87, nater_10_90_safra1:13350.33, nater_10_90_safra2:13659.03, nater_50_50:12835.89, nater_50_50_safra2:13075.83, nater_ex:12334.11, banco:13544.55 },
+            "57292": { nome: "DISPERSOR SOLIDO T25P", nater_7d:7599.38, nater_30d:8048.25, nater_60d:8225.44, nater_90d:8406.56, nater_120d:8590.84, nater_6x:7875.00, nater_30_05_27:9276.75, nater_30_07_27:9521.13, nater_10_90_safra1:9198.00, nater_10_90_safra2:9410.85, nater_50_50:8843.38, nater_50_50_safra2:9008.81, nater_ex:8497.91, banco:9331.88 },
+            "39740": { nome: "GERADOR GG10000", nater_7d:6019.06, nater_30d:6374.43, nater_60d:6514.76, nater_90d:6658.22, nater_120d:6804.17, nater_6x:6237.21, nater_30_05_27:7347.40, nater_30_07_27:7540.79, nater_10_90_safra1:7284.92, nater_10_90_safra2:7453.37, nater_50_50:7004.38, nater_50_50_safra2:7135.29, nater_ex:6730.57, banco:7391.09 },
             
-            // Kit Agras T70P
-            "57251": { nome: "DRONE DJI AGRAS T70P", nater_6x: 76200.00, nater_30d: 77876.40, nater_60d: 79590.90, nater_90d: 81343.50, nater_120d: 83126.58, nater_ex: 82227.42, nater_50_50: 92704.92, banco: 90297.00 },
-            "57259": { nome: "BATERIA P/ DRONE AGRAS T70P", nater_6x: 22860.00, nater_30d: 23362.92, nater_60d: 23877.27, nater_90d: 24403.05, nater_120d: 24937.97, nater_ex: 24668.23, nater_50_50: 26570.18, banco: 27089.10 },
-            "57262": { nome: "CARREGADOR BATERIA P/ DRONE AGRAS T70P", nater_6x: 15240.00, nater_30d: 15575.28, nater_60d: 15918.18, nater_90d: 16268.70, nater_120d: 16625.32, nater_ex: 16445.48, nater_50_50: 17713.45, banco: 18112.74 },
-            "57293": { nome: "DISPERSOR SOLIDO P/ DRONE AGRAS T70P", nater_6x: 8762.50, nater_30d: 8955.28, nater_60d: 9152.43, nater_90d: 9353.96, nater_120d: 9559.01, nater_ex: 9455.61, nater_50_50: 10184.65, banco: 10383.56 },
+            "57251": { nome: "DRONE DJI AGRAS T70P", nater_7d:73533.00, nater_30d:77876.40, nater_60d:79590.90, nater_90d:81343.50, nater_120d:83126.58, nater_6x:76200.00, nater_30_05_27:89763.60, nater_30_07_27:92125.80, nater_10_90_safra1:89001.60, nater_10_90_safra2:91059.60, nater_50_50:85572.60, nater_50_50_safra2:87172.20, nater_ex:82227.42, banco:90297.00 },
+            "57259": { nome: "BATERIA P/ DRONE AGRAS T70P", nater_7d:22059.90, nater_30d:23362.92, nater_60d:23877.27, nater_90d:24403.05, nater_120d:24937.97, nater_6x:22860.00, nater_30_05_27:26929.08, nater_30_07_27:27637.74, nater_10_90_safra1:26700.48, nater_10_90_safra2:27317.88, nater_50_50:25671.78, nater_50_50_safra2:26151.54, nater_ex:24668.23, banco:27089.10 },
+            "57262": { nome: "CARREGADOR T70P", nater_7d:14706.60, nater_30d:15575.28, nater_60d:15918.18, nater_90d:16268.70, nater_120d:16625.32, nater_6x:15240.00, nater_30_05_27:17952.72, nater_30_07_27:18425.16, nater_10_90_safra1:17800.32, nater_10_90_safra2:18211.92, nater_50_50:17114.52, nater_50_50_safra2:17434.36, nater_ex:16445.48, banco:18112.74 },
+            "57293": { nome: "DISPERSOR SOLIDO T70P", nater_7d:8455.81, nater_30d:8955.28, nater_60d:9152.43, nater_90d:9353.96, nater_120d:9559.01, nater_6x:8762.50, nater_30_05_27:10322.23, nater_30_07_27:10593.97, nater_10_90_safra1:10234.69, nater_10_90_safra2:10471.35, nater_50_50:9839.91, nater_50_50_safra2:10023.76, nater_ex:9455.61, banco:10383.56 },
             
-            // Kit Agras T100 / T100P
-            "57252": { nome: "DRONE DJI AGRAS T100", nater_6x: 116737.00, nater_30d: 119305.21, nater_60d: 121931.80, nater_90d: 124616.75, nater_120d: 127348.39, nater_ex: 125970.90, nater_50_50: 135683.42, banco: 138333.35 },
-            "57260": { nome: "BATERIA P/ DRONE AGRAS T100", nater_6x: 22860.00, nater_30d: 23362.92, nater_60d: 23877.27, nater_90d: 24403.05, nater_120d: 24937.97, nater_ex: 24668.23, nater_50_50: 26570.18, banco: 27089.10 },
-            "57263": { nome: "CARREGADOR BATERIA P/ DRONE AGRAS T100", nater_6x: 15240.00, nater_30d: 15575.28, nater_60d: 15918.18, nater_90d: 16268.70, nater_120d: 16625.32, nater_ex: 16445.48, nater_50_50: 17713.45, banco: 18112.74 },
-            "57294": { nome: "DISPERSOR SOLIDO P/ DRONE AGRAS T100P", nater_6x: 15250.00, nater_30d: 15585.50, nater_60d: 15928.63, nater_90d: 16279.38, nater_120d: 16636.23, nater_ex: 16456.28, nater_50_50: 17725.08, banco: 18071.25 },
-            "57295": { nome: "GERADOR KAWASHIMA GAS.TRIF 380/220 GG20000D", nater_6x: 28597.74, nater_30d: 29226.89, nater_60d: 29870.34, nater_90d: 30528.08, nater_120d: 31197.27, nater_ex: 30859.82, nater_50_50: 33239.15, banco: 33888.32 },
+            "57252": { nome: "DRONE DJI AGRAS T100", nater_7d:112651.21, nater_30d:119305.21, nater_60d:121931.80, nater_90d:124616.75, nater_120d:127348.39, nater_6x:116737.00, nater_30_05_27:137516.19, nater_30_07_27:141135.53, nater_10_90_safra1:136349.52, nater_10_90_safra2:139501.99, nater_50_50:131095.69, nater_50_50_safra2:133547.09, nater_ex:125970.90, banco:138333.35 },
+            "57260": { nome: "BATERIA P/ DRONE AGRAS T100", nater_7d:22059.90, nater_30d:23362.92, nater_60d:23877.27, nater_90d:24403.05, nater_120d:24937.97, nater_6x:22860.00, nater_30_05_27:26929.08, nater_30_07_27:27637.74, nater_10_90_safra1:26700.48, nater_10_90_safra2:27317.88, nater_50_50:25671.78, nater_50_50_safra2:26151.54, nater_ex:24668.23, banco:27089.10 },
+            "57263": { nome: "CARREGADOR T100", nater_7d:14706.60, nater_30d:15575.28, nater_60d:15918.18, nater_90d:16268.70, nater_120d:16625.32, nater_6x:15240.00, nater_30_05_27:17952.72, nater_30_07_27:18425.16, nater_10_90_safra1:17800.32, nater_10_90_safra2:18211.92, nater_50_50:17114.52, nater_50_50_safra2:17434.36, nater_ex:16445.48, banco:18112.74 },
+            "57294": { nome: "DISPERSOR SOLIDO T100P", nater_7d:14716.25, nater_30d:15585.50, nater_60d:15928.63, nater_90d:16279.38, nater_120d:16636.23, nater_6x:15250.00, nater_30_05_27:17964.50, nater_30_07_27:18437.25, nater_10_90_safra1:17811.98, nater_10_90_safra2:18223.85, nater_50_50:17125.75, nater_50_50_safra2:17445.79, nater_ex:16456.28, banco:18071.25 },
+            "57295": { nome: "GERADOR GG20000D", nater_7d:27596.82, nater_30d:29226.89, nater_60d:29870.34, nater_90d:30528.08, nater_120d:31197.27, nater_6x:28597.74, nater_30_05_27:33698.41, nater_30_07_27:34582.01, nater_10_90_safra1:33412.04, nater_10_90_safra2:34184.27, nater_50_50:32125.04, nater_50_50_safra2:32725.15, nater_ex:30859.82, banco:33888.32 },
             
-            // Periféricos Comuns de Controle
-            "50449": { nome: "BATERIA WB37 P/ CONTROLE AGRAS", nater_6x: 825.38, nater_30d: 843.54, nater_60d: 862.11, nater_90d: 881.10, nater_120d: 900.41, nater_ex: 890.67, nater_50_50: 959.34, banco: 978.08 },
-            "50451": { nome: "HUB CARREGADOR BATERIA WB37 AGRAS", nater_6x: 976.13, nater_30d: 997.60, nater_60d: 1019.57, nater_90d: 1042.02, nater_120d: 1064.86, nater_ex: 1053.34, nater_50_50: 1134.55, banco: 1156.71 },
-            "50450": { nome: "CARREGADOR 65W BATERIA WB37 AGRAS", nater_6x: 458.21, nater_30d: 468.29, nater_60d: 478.60, nater_90d: 489.13, nater_120d: 499.86, nater_ex: 494.45, nater_50_50: 532.57, banco: 542.97 },
+            // Periféricos Comuns (Controle)
+            "50449": { nome: "BATERIA WB37", nater_7d:796.47, nater_30d:843.54, nater_60d:862.11, nater_90d:881.10, nater_120d:900.41, nater_6x:825.38, nater_30_05_27:972.58, nater_30_07_27:998.09, nater_10_90_safra1:964.31, nater_10_90_safra2:986.59, nater_50_50:927.13, nater_50_50_safra2:944.43, nater_ex:890.67, banco:978.08 },
+            "50451": { nome: "HUB WB37", nater_7d:941.73, nater_30d:997.60, nater_60d:1019.57, nater_90d:1042.02, nater_120d:1064.86, nater_6x:976.13, nater_30_05_27:1149.33, nater_30_07_27:1179.49, nater_10_90_safra1:1139.55, nater_10_90_safra2:1165.89, nater_50_50:1095.63, nater_50_50_safra2:1116.07, nater_ex:1053.34, banco:1156.71 },
+            "50450": { nome: "CARREGADOR 65W", nater_7d:442.17, nater_30d:468.29, nater_60d:478.60, nater_90d:489.13, nater_120d:499.86, nater_6x:458.21, nater_30_05_27:539.51, nater_30_07_27:553.67, nater_10_90_safra1:534.91, nater_10_90_safra2:547.28, nater_50_50:514.31, nater_50_50_safra2:523.91, nater_ex:494.45, banco:542.97 },
             
-            // Implementos
-            "56772": { nome: "MISTURADOR DAMEK 200L", nater_6x: 4950.00, nater_30d: 5058.90, nater_60d: 5170.28, nater_90d: 5284.13, nater_120d: 5399.96, nater_ex: 5341.55, nater_50_50: 5753.39, banco: 5651.42 },
-            "56279": { nome: "MISTURADOR DAMEK 120L", nater_6x: 2950.00, nater_30d: 3014.90, nater_60d: 3081.28, nater_90d: 3149.13, nater_120d: 3218.16, nater_ex: 3183.35, nater_50_50: 3495.75, banco: 3368.02 }
+            // Implementos extra (Damek)
+            "56772": { nome: "MISTURADOR DAMEK 200L", nater_7d:4776.75, nater_30d:5058.90, nater_60d:5170.28, nater_90d:5284.13, nater_120d:5399.96, nater_6x:4950.00, nater_30_05_27:6212.11, nater_30_07_27:6375.40, nater_10_90_safra1:6159.21, nater_10_90_safra2:6301.32, nater_50_50:5753.39, nater_50_50_safra2:5861.22, nater_ex:5341.55, banco:5651.42 },
+            "56279": { nome: "MISTURADOR DAMEK 120L", nater_7d:2846.75, nater_30d:3014.90, nater_60d:3081.28, nater_90d:3149.13, nater_120d:3218.16, nater_6x:2950.00, nater_30_05_27:3702.11, nater_30_07_27:3799.40, nater_10_90_safra1:3670.41, nater_10_90_safra2:3755.21, nater_50_50:3495.75, nater_50_50_safra2:3560.10, nater_ex:3183.35, banco:3368.02 }
         };
 
-        // COMPOSIÇÃO DOS KITS
         const COMPOSICAO_KITS = {
-            "T25P": {
-                basico: [
-                    { cod: "57250", qtd: 1 }, { cod: "57258", qtd: 3 }, { cod: "57261", qtd: 1 },
-                    { cod: "50449", qtd: 1 }, { cod: "50451", qtd: 1 }, { cod: "50450", qtd: 1 }
-                ],
-                dispersor: "57292", gerador: "39740", nome_kit: "kit basico (T25P)", nome_acc: "Acessórios ou complementos (T25P)"
-            },
-            "T70P": {
-                basico: [
-                    { cod: "57251", qtd: 1 }, { cod: "57259", qtd: 3 }, { cod: "57262", qtd: 1 },
-                    { cod: "50449", qtd: 1 }, { cod: "50451", qtd: 1 }, { cod: "50450", qtd: 1 }
-                ],
-                dispersor: "57293", gerador: "57295", nome_kit: "kit basico (T70P)", nome_acc: "Acessórios ou complementos (T70P)"
-            },
-            "T100": {
-                basico: [
-                    { cod: "57252", qtd: 1 }, { cod: "57260", qtd: 3 }, { cod: "57263", qtd: 1 },
-                    { cod: "50449", qtd: 1 }, { cod: "50451", qtd: 1 }, { cod: "50450", qtd: 1 }
-                ],
-                dispersor: "57294", gerador: "57295", nome_kit: "kit basico (T100)", nome_acc: "Acessórios ou complementos (T100P)"
-            }
+            "T25P": { basico: [{cod: "57250", qtd: 1}, {cod: "57258", qtd: 3}, {cod: "57261", qtd: 1}, {cod: "50449", qtd: 1}, {cod: "50451", qtd: 1}, {cod: "50450", qtd: 1}], dispersor: "57292", gerador: "39740" },
+            "T70P": { basico: [{cod: "57251", qtd: 1}, {cod: "57259", qtd: 3}, {cod: "57262", qtd: 1}, {cod: "50449", qtd: 1}, {cod: "50451", qtd: 1}, {cod: "50450", qtd: 1}], dispersor: "57293", gerador: "57295" },
+            "T100": { basico: [{cod: "57252", qtd: 1}, {cod: "57260", qtd: 3}, {cod: "57263", qtd: 1}, {cod: "50449", qtd: 1}, {cod: "50451", qtd: 1}, {cod: "50450", qtd: 1}], dispersor: "57294", gerador: "57295" }
         };
 
         const elDrone = document.getElementById('drone-select');
@@ -198,157 +214,71 @@
         const elGerador = document.getElementById('check-gerador');
         const elDamek120 = document.getElementById('check-damek120');
         const elDamek200 = document.getElementById('check-damek200');
-        
-        const elCorpoTabela = document.getElementById('tabela-corpo');
-        const elStatus = document.getElementById('status-placeholder');
-        
+        const elCorpo = document.getElementById('tabela-corpo');
         const cardBasico = document.getElementById('total-basico-card');
         const cardAdicionais = document.getElementById('total-adicionais-card');
         const cardGeral = document.getElementById('total-geral-card');
 
-        function formatBRL(valor) {
-            return valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        }
+        function fmt(v) { return v.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 
-        function calcularSimulacao() {
+        function recalcular() {
             const droneKey = elDrone.value;
             const condicao = elCondicao.value;
-            
-            if (!droneKey) {
-                elCorpoTabela.innerHTML = `<tr><td colspan="5" class="p-8 text-center text-gray-400 italic bg-gray-50">Selecione as opções ao lado para gerar o espelho da proposta.</td></tr>`;
-                elStatus.innerText = "Nenhum drone selecionado";
-                cardBasico.innerText = "R$ 0,00";
-                cardAdicionais.innerText = "R$ 0,00";
-                cardGeral.innerText = "R$ 0,00";
-                return;
-            }
+            if (!droneKey) return;
 
-            const kitDef = COMPOSICAO_KITS[droneKey];
-            elStatus.innerText = `${elDrone.options[elDrone.selectedIndex].text} — ${elCondicao.options[elCondicao.selectedIndex].text}`;
-            
-            let htmlOutput = "";
-            let subtotalBasico = 0;
-            let subtotalAdicionais = 0;
+            const kit = COMPOSICAO_KITS[droneKey];
+            let subBasico = 0, subAdicionais = 0, html = "";
 
-            // 1. RENDERIZAR KIT BÁSICO
-            htmlOutput += `<tr class="bg-emerald-400 text-black font-bold border-b border-black text-sm"><td colspan="5" class="p-2">${kitDef.nome_kit}</td></tr>`;
-            kitDef.basico.forEach(linha => {
-                const itemData = MATRIZ_PRECOS[linha.cod];
-                const valorUnit = itemData[condicao];
-                const valorTotal = valorUnit * linha.qtd;
-                subtotalBasico += valorTotal;
-
-                htmlOutput += `
-                    <tr class="border-b border-gray-300 text-xs text-center hover:bg-gray-50">
-                        <td class="p-2 border-r border-black font-mono">${linha.cod}</td>
-                        <td class="p-2 border-r border-black text-left">${itemData.nome}</td>
-                        <td class="p-2 border-r border-black">${linha.qtd}</td>
-                        <td class="p-2 border-r border-black text-right">${formatBRL(valorUnit)}</td>
-                        <td class="p-2 text-right font-semibold">${formatBRL(valorTotal)}</td>
-                    </tr>`;
+            // Render Kit Base
+            html += `<tr class="row-drone text-[11px] uppercase"><td colspan="5" class="p-3">Componentes Kit Básico — ${droneKey}</td></tr>`;
+            kit.basico.forEach(l => {
+                const p = MATRIZ_PRECOS[l.cod][condicao];
+                subBasico += p * l.qtd;
+                html += `<tr class="border-b"><td class="p-3 text-xs font-mono">${l.cod}</td><td class="p-3 text-xs">${MATRIZ_PRECOS[l.cod].nome}</td><td class="p-3 text-center text-xs">${l.qtd}</td><td class="p-3 text-right text-xs">R$ ${fmt(p)}</td><td class="p-3 text-right text-xs font-semibold">R$ ${fmt(p*l.qtd)}</td></tr>`;
             });
-            htmlOutput += `
-                <tr class="bg-emerald-50 font-bold border-b-2 border-black text-xs">
-                    <td colspan="4" class="p-2 border-r border-black text-right uppercase">VALOR TOTAL DO ${kitDef.nome_kit}:</td>
-                    <td class="p-2 text-right text-sm text-emerald-900">${formatBRL(subtotalBasico)}</td>
-                </tr>`;
 
-            // 2. RENDERIZAR ACESSÓRIOS / COMPLEMENTOS
-            let temAcessorios = elDispersor.checked || elGerador.checked;
-            if (temAcessorios) {
-                htmlOutput += `<tr class="bg-lime-600 text-white font-bold border-b border-black text-sm"><td colspan="5" class="p-2">${kitDef.nome_acc}</td></tr>`;
-                
-                if (elDispersor.checked) {
-                    const cod = kitDef.dispersor;
-                    const data = MATRIZ_PRECOS[cod];
-                    const vUnit = data[condicao];
-                    subtotalAdicionais += vUnit;
-                    htmlOutput += renderLinhaAdicional(cod, data.nome, vUnit);
+            // Render Adicionais
+            if (elDispersor.checked || elGerador.checked || elDamek120.checked || elDamek200.checked) {
+                html += `<tr class="row-acc text-[11px] uppercase"><td colspan="5" class="p-3">Acessórios Opcionais & Implementos</td></tr>`;
+                if(elDispersor.checked) {
+                    const p = MATRIZ_PRECOS[kit.dispersor][condicao]; subAdicionais += p;
+                    html += renderRow(kit.dispersor, p);
                 }
-                if (elGerador.checked) {
-                    const cod = kitDef.gerador;
-                    const data = MATRIZ_PRECOS[cod];
-                    const vUnit = data[condicao];
-                    subtotalAdicionais += vUnit;
-                    htmlOutput += renderLinhaAdicional(cod, data.nome, vUnit);
+                if(elGerador.checked) {
+                    const p = MATRIZ_PRECOS[kit.gerador][condicao]; subAdicionais += p;
+                    html += renderRow(kit.gerador, p);
                 }
-                htmlOutput += `
-                    <tr class="bg-lime-50 font-bold border-b-2 border-black text-xs">
-                        <td colspan="4" class="p-2 border-r border-black text-right uppercase">VALOR TOTAL ACESSÓRIOS:</td>
-                        <td class="p-2 text-right text-sm text-lime-900">${formatBRL(subtotalAdicionais)}</td>
-                    </tr>`;
+                if(elDamek120.checked) {
+                    const p = MATRIZ_PRECOS["56279"][condicao]; subAdicionais += p;
+                    html += renderRow("56279", p);
+                }
+                if(elDamek200.checked) {
+                    const p = MATRIZ_PRECOS["56772"][condicao]; subAdicionais += p;
+                    html += renderRow("56772", p);
+                }
             }
 
-            // 3. RENDERIZAR IMPLEMENTOS DAMEK
-            let subtotalDamek = 0;
-            if (elDamek120.checked || elDamek200.checked) {
-                htmlOutput += `<tr class="bg-blue-600 text-white font-bold border-b border-black text-sm"><td colspan="5" class="p-2">Implementos Extra</td></tr>`;
-                if (elDamek200.checked) {
-                    const data = MATRIZ_PRECOS["56772"];
-                    const vUnit = data[condicao];
-                    subtotalDamek += vUnit;
-                    htmlOutput += renderLinhaAdicional("56772", data.nome, vUnit);
-                }
-                if (elDamek120.checked) {
-                    const data = MATRIZ_PRECOS["56279"];
-                    const vUnit = data[condicao];
-                    subtotalDamek += vUnit;
-                    htmlOutput += renderLinhaAdicional("56279", data.nome, vUnit);
-                }
-                htmlOutput += `
-                    <tr class="bg-blue-50 font-bold border-b border-black text-xs">
-                        <td colspan="4" class="p-2 border-r border-black text-right uppercase">VALOR TOTAL IMPLEMENTOS:</td>
-                        <td class="p-2 text-right text-sm text-blue-900">${formatBRL(subtotalDamek)}</td>
-                    </tr>`;
-            }
-
-            elCorpoTabela.innerHTML = htmlOutput;
-            cardBasico.innerText = `R$ ${formatBRL(subtotalBasico)}`;
-            cardAdicionais.innerText = `R$ ${formatBRL(subtotalAdicionais + subtotalDamek)}`;
-            cardGeral.innerText = `R$ ${formatBRL(subtotalBasico + subtotalAdicionais + subtotalDamek)}`;
+            elCorpo.innerHTML = html;
+            cardBasico.innerText = "R$ " + fmt(subBasico);
+            cardAdicionais.innerText = "R$ " + fmt(subAdicionais);
+            cardGeral.innerText = "R$ " + fmt(subBasico + subAdicionais);
+            document.getElementById('status-placeholder').innerText = elCondicao.options[elCondicao.selectedIndex].text;
         }
 
-        function renderLinhaAdicional(cod, nome, vUnit) {
-            return `
-                <tr class="border-b border-gray-300 text-xs text-center hover:bg-gray-50">
-                    <td class="p-2 border-r border-black font-mono">${cod}</td>
-                    <td class="p-2 border-r border-black text-left">${nome}</td>
-                    <td class="p-2 border-r border-black">1</td>
-                    <td class="p-2 border-r border-black text-right">${formatBRL(vUnit)}</td>
-                    <td class="p-2 text-right font-semibold">${formatBRL(vUnit)}</td>
-                </tr>`;
+        function renderRow(cod, p) {
+            return `<tr class="border-b"><td class="p-3 text-xs font-mono">${cod}</td><td class="p-3 text-xs">${MATRIZ_PRECOS[cod].nome}</td><td class="p-3 text-center text-xs">1</td><td class="p-3 text-right text-xs">R$ ${fmt(p)}</td><td class="p-3 text-right text-xs font-semibold">R$ ${fmt(p)}</td></tr>`;
         }
 
         document.getElementById('btn-copiar').addEventListener('click', () => {
             const droneName = elDrone.options[elDrone.selectedIndex].text;
-            const condName = elCondicao.options[elCondicao.selectedIndex].text;
-            
-            if(!elDrone.value) {
-                alert("Por favor, selecione um drone primeiro!");
-                return;
-            }
-
-            let msg = `*ORÇAMENTO PROPOSTA COMERCIAL - FEIRA 2026*\n\n`;
-            msg += `🛸 *Equipamento principal:* ${droneName}\n`;
-            msg += `💳 *Condição simulada:* ${condName}\n`;
-            msg += `────────────────────\n`;
-            msg += `• *Kit Básico:* R$ ${cardBasico.innerText.replace('R$ ', '')}\n`;
-            
-            if(elDispersor.checked || elGerador.checked || elDamek120.checked || elDamek200.checked) {
-                msg += `• *Adicionais / Opcionais:* R$ ${cardAdicionais.innerText.replace('R$ ', '')}\n`;
-            }
-            msg += `────────────────────\n`;
-            msg += `💰 *VALOR TOTAL: ${cardGeral.innerText}*\n\n`;
-            msg += `_Ofertas válidas exclusivamente durante o período da feira. Condições sujeitas a alteração sem aviso prévio._`;
-
-            navigator.clipboard.writeText(msg).then(() => {
-                alert("Resumo copiado com sucesso! Pode colar diretamente no WhatsApp.");
-            });
+            let msg = `*PROPOSTA COMERCIAL - FEIRA AGRO NATER COOP 2026*\n\n`;
+            msg += `🛸 *Equipamento:* ${droneName}\n💳 *Condição:* ${elCondicao.options[elCondicao.selectedIndex].text}\n`;
+            msg += `\n• *Kit Básico:* ${cardBasico.innerText}\n• *Opcionais/Implementos:* ${cardAdicionais.innerText}\n`;
+            msg += `\n💰 *INVESTIMENTO TOTAL: ${cardGeral.innerText}*\n\n_Condições exclusivas para fechamento durante o período da feira._`;
+            navigator.clipboard.writeText(msg).then(() => alert("Proposta copiada para o seu painel de transferência!"));
         });
 
-        [elDrone, elCondicao, elDispersor, elGerador, elDamek120, elDamek200].forEach(el => {
-            el.addEventListener('change', calcularSimulacao);
-        });
+        [elDrone, elCondicao, elDispersor, elGerador, elDamek120, elDamek200].forEach(e => e.addEventListener('change', recalcular));
     </script>
 </body>
 </html>
