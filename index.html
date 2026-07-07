@@ -304,19 +304,19 @@
             const t519 = obterSomaCondicao(elDrone.value, 'nater_50_50_safra2');
             const t516 = obterSomaCondicao(elDrone.value, 'nater_10_90_safra1');
 
-            const payload = {
-                vendedor: vendedor,
-                filial: filial,
-                nome: nome,
-                codigo: codigo,
-                propriedade: prop,
-                telefone: tel,
-                drone: "DJI Agras " + elDrone.value,
-                condicao: elCondicao.options[elCondicao.selectedIndex].text.split(' (')[0],
-                observacoes: obs,
-                total_6x: t6x,
-                total_519: t519 > 0 ? t519 : "",
-                total_516: t516 > 0 ? t516 : ""
+          const payload = {
+            vendedor: vendedor,      // Deve conter o e-mail do vendedor
+            filial: filial,          // Deve conter a filial (Ex: F29)
+            nome: nome,              // Nome do cliente
+            codigo: codigo,          // Código do cliente
+            propriedade: prop,       // Endereço completo
+            telefone: tel,           // Telefone de contato
+            drone: "DJI Agras " + elDrone.value,
+            condicao: elCondicao.options[elCondicao.selectedIndex].text.split(' (')[0],
+            observacoes: obs,
+            total_6x: t6x,           // Valor calculado para a condição 6x
+            total_519: t519,         // Valor calculado para a condição 519
+            total_516: t516          // Valor calculado para a condição 516
             };
 
             const btn = document.getElementById('btn-salvar-lead');
