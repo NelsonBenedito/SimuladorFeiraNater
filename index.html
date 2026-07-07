@@ -161,8 +161,8 @@
                     <p id="total-adicionais-card" class="text-xl font-bold text-gray-700">R$ 0,00</p>
                 </div>
                 <div class="glass-card p-4 border-l-4 border-green-500 bg-green-900">
-                    <p class="text-[10px] font-bold text-green-200 uppercase">Total do Pedido</p>
-                    <p id="total-geral-card" class="text-xl font-bold text-white">R$ 0,00</p>
+                    <p class="text-[10px] font-bold text-green-900 uppercase">Total do Pedido</p>
+                    <p id="total-geral-card" class="text-xl font-bold text-green-900">R$ 0,00</p>
                 </div>
             </div>
 
@@ -304,20 +304,20 @@
             const t519 = obterSomaCondicao(elDrone.value, 'nater_50_50_safra2');
             const t516 = obterSomaCondicao(elDrone.value, 'nater_10_90_safra1');
 
-          const payload = {
-            vendedor: vendedor,      // Deve conter o e-mail do vendedor
-            filial: filial,          // Deve conter a filial (Ex: F29)
-            nome: nome,              // Nome do cliente
-            codigo: codigo,          // Código do cliente
-            propriedade: prop,       // Endereço completo
-            telefone: tel,           // Telefone de contato
-            drone: "DJI Agras " + elDrone.value,
-            condicao: elCondicao.options[elCondicao.selectedIndex].text.split(' (')[0],
-            observacoes: obs,
-            total_6x: t6x,           // Valor calculado para a condição 6x
-            total_519: t519,         // Valor calculado para a condição 519
-            total_516: t516          // Valor calculado para a condição 516
-            };
+         const payload = {
+    vendedor: document.getElementById('lead-vendedor').value.trim(),
+    filial: document.getElementById('lead-filial').value.trim(),
+    nome: document.getElementById('lead-nome').value.trim(),
+    codigo: document.getElementById('lead-codigo').value.trim() || '00000',
+    propriedade: document.getElementById('lead-prop').value.trim(),
+    telefone: document.getElementById('lead-tel').value.trim(),
+    drone: "DJI Agras " + elDrone.value,
+    condicao: elCondicao.options[elCondicao.selectedIndex].text.split(' (')[0],
+    observacoes: document.getElementById('lead-obs').value.trim(),
+    total_6x: obterSomaCondicao(elDrone.value, 'nater_6x'),
+    total_519: obterSomaCondicao(elDrone.value, 'nater_50_50_safra2'),
+    total_516: obterSomaCondicao(elDrone.value, 'nater_10_90_safra1')
+};
 
             const btn = document.getElementById('btn-salvar-lead');
             btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> ENVIANDO...`;
