@@ -193,18 +193,19 @@
                         <div>
                             <label class="block text-[10px] font-bold text-gray-500 uppercase mb-1">Condição
                                 Comercial</label>
-                            <select id="condicao-select" class="w-full bg-soft-gray border border-gray-200 rounded-lg p-2 text-xs focus:outline-none font-medium">
-    <option value="nater_6x">357 - FEIRA NATER 6X (À Vista)</option>
-    <option value="nater_7d">508 - FEIRA NATER 7 DIAS</option>
-    <option value="nater_30d">509 - FEIRA NATER 30 DIAS</option>
-    <option value="nater_60d">510 - FEIRA NATER 60 DIAS</option>
-    <option value="nater_90d">511 - FEIRA NATER 90 DIAS</option>
-    <option value="nater_120d">512 - FEIRA NATER 120 DIAS</option>
-    <option value="nater_ex">357 - FEIRA NATER EX</option>
-    <option value="nater_50_50_safra2">519 - NATER 50% / 50%</option>
-    <option value="nater_10_90_safra1">516 - NATER 10% / 90%</option>
-    <option value="banco">CONVÊNIOS BANCÁRIOS</option>
-</select>
+                            <select id="condicao-select"
+                                class="w-full bg-soft-gray border border-gray-200 rounded-lg p-2 text-xs focus:outline-none font-medium">
+                                <option value="nater_6x">357 - FEIRA NATER 6X (À Vista)</option>
+                                <option value="nater_7d">508 - FEIRA NATER 7 DIAS</option>
+                                <option value="nater_30d">509 - FEIRA NATER 30 DIAS</option>
+                                <option value="nater_60d">510 - FEIRA NATER 60 DIAS</option>
+                                <option value="nater_90d">511 - FEIRA NATER 90 DIAS</option>
+                                <option value="nater_120d">512 - FEIRA NATER 120 DIAS</option>
+                                <option value="nater_ex">357 - FEIRA NATER EX</option>
+                                <option value="nater_50_50_safra2">519 - NATER 50% / 50%</option>
+                                <option value="nater_10_90_safra1">516 - NATER 10% / 90%</option>
+                                <option value="banco">CONVÊNIOS BANCÁRIOS</option>
+                            </select>
 
                         </div>
                     </div>
@@ -297,25 +298,34 @@
         const URL_GOOGLE_PLANILHA = 'https://script.google.com/macros/s/AKfycbxxRjWpN2jQY8Thl2OSFYHmbKTsw2_JtDP_De5rG4uuey3Bbg749tgONOLCica7G2F-ZA/exec';
 
         const MATRIZ_PRECOS = {
-            "57250": { nome: "DRONE DJI AGRAS T25P", nater_30d: 51917.60, nater_60d: 53060.60, nater_90d: 54229.00, nater_120d: 55417.72, nater_6x: 50800.00, nater_10_90_safra1: 59334.80, nater_50_50_safra2: 58115.60, nater_ex: 54818.28, banco: 60198.00 },
-            "57258": { nome: "BATERIA P/ DRONE AGRAS T25P", nater_30d: 11681.46, nater_60d: 11938.64, nater_90d: 12201.53, nater_120d: 12468.99, nater_6x: 11430.00, nater_10_90_safra1: 13350.33, nater_50_50_safra2: 13075.83, nater_ex: 12334.11, banco: 13544.55 },
-            "57261": { nome: "CARREGADOR T25P", nater_30d: 11681.46, nater_60d: 11938.64, nater_90d: 12201.53, nater_120d: 12468.99, nater_6x: 11430.00, nater_10_90_safra1: 13350.33, nater_50_50_safra2: 13075.83, nater_ex: 12334.11, banco: 13544.55 },
-            "57292": { nome: "DISPERSOR SOLIDO T25P", nater_30d: 8048.25, nater_60d: 8225.44, nater_90d: 8406.56, nater_120d: 8590.84, nater_6x: 7875.00, nater_10_90_safra1: 9198.00, nater_50_50_safra2: 9008.81, nater_ex: 8497.91, banco: 9331.88 },
-            "39740": { nome: "GERADOR GG10000", nater_30d: 6374.43, nater_60d: 6514.76, nater_90d: 6658.22, nater_120d: 6804.17, nater_6x: 6237.21, nater_10_90_safra1: 7284.92, nater_50_50_safra2: 7135.29, nater_ex: 6730.57, banco: 7391.09 },
-            "57251": { nome: "DRONE DJI AGRAS T70P", nater_30d: 77876.40, nater_60d: 79590.90, nater_90d: 81343.50, nater_120d: 83126.58, nater_6x: 76200.00, nater_10_90_safra1: 89001.60, nater_50_50_safra2: 87172.20, nater_ex: 82227.42, banco: 90297.00 },
-            "57259": { nome: "BATERIA P/ DRONE AGRAS T70P", nater_30d: 23362.92, nater_60d: 23877.27, nater_90d: 24403.05, nater_120d: 24937.97, nater_6x: 22860.00, nater_10_90_safra1: 26700.48, nater_50_50_safra2: 26151.54, nater_ex: 24668.23, banco: 27089.10 },
-            "57262": { nome: "CARREGADOR T70P", nater_30d: 15575.28, nater_60d: 15918.18, nater_90d: 16268.70, nater_120d: 16625.32, nater_6x: 15240.00, nater_10_90_safra1: 17800.32, nater_50_50_safra2: 17434.36, nater_ex: 16445.48, banco: 18112.74 },
-            "57293": { nome: "DISPERSOR SOLIDO T70P", nater_30d: 8955.28, nater_60d: 9152.43, nater_90d: 9353.96, nater_120d: 9559.01, nater_6x: 8762.50, nater_10_90_safra1: 10234.69, nater_50_50_safra2: 10023.76, nater_ex: 9455.61, banco: 10383.56 },
-            "57252": { nome: "DRONE DJI AGRAS T100", nater_30d: 119305.21, nater_60d: 121931.80, nater_90d: 124616.75, nater_120d: 127348.39, nater_6x: 116737.00, nater_10_90_safra1: 136349.52, nater_50_50_safra2: 133547.09, nater_ex: 125970.90, banco: 138333.35 },
-            "57260": { nome: "BATERIA P/ DRONE AGRAS T100", nater_30d: 23362.92, nater_60d: 23877.27, nater_90d: 24403.05, nater_120d: 24937.97, nater_6x: 22860.00, nater_10_90_safra1: 26700.48, nater_50_50_safra2: 26151.54, nater_ex: 24668.23, banco: 27089.10 },
-            "57263": { nome: "CARREGADOR T100", nater_30d: 15575.28, nater_60d: 15918.18, nater_90d: 16268.70, nater_120d: 16625.32, nater_6x: 15240.00, nater_10_90_safra1: 17800.32, nater_50_50_safra2: 17434.36, nater_ex: 16445.48, banco: 18112.74 },
-            "57294": { nome: "DISPERSOR SOLIDO T100P", nater_30d: 15585.50, nater_60d: 15928.63, nater_90d: 16279.38, nater_120d: 16636.23, nater_6x: 15250.00, nater_10_90_safra1: 17811.98, nater_50_50_safra2: 17445.79, nater_ex: 16456.28, banco: 18071.25 },
-            "57295": { nome: "GERADOR GG20000D", nater_30d: 29226.89, nater_60d: 29870.34, nater_90d: 30528.08, nater_120d: 31197.27, nater_6x: 28597.74, nater_10_90_safra1: 33412.04, nater_50_50_safra2: 32725.15, nater_ex: 30859.82, banco: 33888.32 },
-            "50449": { nome: "BATERIA WB37", nater_30d: 843.54, nater_60d: 862.11, nater_90d: 881.10, nater_120d: 900.41, nater_6x: 825.38, nater_10_90_safra1: 964.31, nater_50_50_safra2: 944.43, nater_ex: 890.67, banco: 978.08 },
-            "50451": { nome: "HUB WB37", nater_30d: 997.60, nater_60d: 1019.57, nater_90d: 1042.02, nater_120d: 1064.86, nater_6x: 976.13, nater_10_90_safra1: 1139.55, nater_50_50_safra2: 1116.07, nater_ex: 1053.34, banco: 1156.71 },
-            "50450": { nome: "CARREGADOR 65W", nater_30d: 468.29, nater_60d: 478.60, nater_90d: 489.13, nater_120d: 499.86, nater_6x: 458.21, nater_10_90_safra1: 534.91, nater_50_50_safra2: 523.91, nater_ex: 494.45, banco: 542.97 },
-            "56772": { nome: "MISTURADOR DAMEK 200L", nater_30d: 5058.90, nater_60d: 5170.28, nater_90d: 5284.13, nater_120d: 5399.96, nater_6x: 4950.00, nater_10_90_safra1: 6159.21, nater_50_50_safra2: 5861.22, nater_ex: 5341.55, banco: 5651.42 },
-            "56279": { nome: "MISTURADOR DAMEK 120L", nater_30d: 3014.90, nater_60d: 3081.28, nater_90d: 3149.13, nater_120d: 3218.16, nater_6x: 2950.00, nater_10_90_safra1: 3670.41, nater_50_50_safra2: 3560.10, nater_ex: 3183.35, banco: 3368.02 }
+            // Kit Agras T25P
+            "57250": { nome: "DRONE DJI AGRAS T25P", nater_30d: 51917.60, nater_60d: 53060.60, nater_90d: 54229.00, nater_120d: 55417.72, nater_6x: 50800.00, nater_7d: 58668.40, nater_10_90_safra1: 59334.80, nater_50_50_safra2: 58115.60, nater_ex: 54818.28, banco: 60198.00 },
+            "57258": { nome: "BATERIA P/ DRONE AGRAS T25P", nater_30d: 11681.46, nater_60d: 11938.64, nater_90d: 12201.53, nater_120d: 12468.99, nater_6x: 11430.00, nater_7d: 14508.40, nater_10_90_safra1: 13350.33, nater_50_50_safra2: 13075.83, nater_ex: 12334.11, banco: 13544.55 },
+            "57261": { nome: "CARREGADOR T25P", nater_30d: 11681.46, nater_60d: 11938.64, nater_90d: 12201.53, nater_120d: 12468.99, nater_6x: 11430.00, nater_7d: 14508.40, nater_10_90_safra1: 13350.33, nater_50_50_safra2: 13075.83, nater_ex: 12334.11, banco: 13544.55 },
+            "57292": { nome: "DISPERSOR SOLIDO T25P", nater_30d: 8048.25, nater_60d: 8225.44, nater_90d: 8406.56, nater_120d: 8590.84, nater_6x: 7875.00, nater_7d: 9517.40, nater_10_90_safra1: 9198.00, nater_50_50_safra2: 9008.81, nater_ex: 8497.91, banco: 9331.88 },
+            "39740": { nome: "GERADOR GG10000", nater_30d: 6374.43, nater_60d: 6514.76, nater_90d: 6658.22, nater_120d: 6804.17, nater_6x: 6237.21, nater_7d: 6924.83, nater_10_90_safra1: 7284.92, nater_50_50_safra2: 7135.29, nater_ex: 6730.57, banco: 7391.09 },
+
+            // Kit Agras T70P
+            "57251": { nome: "DRONE DJI AGRAS T70P", nater_30d: 77876.40, nater_60d: 79590.90, nater_90d: 81343.50, nater_120d: 83126.58, nater_6x: 76200.00, nater_7d: 85348.40, nater_10_90_safra1: 89001.60, nater_50_50_safra2: 87172.20, nater_ex: 82227.42, banco: 90297.00 },
+            "57259": { nome: "BATERIA P/ DRONE AGRAS T70P", nater_30d: 23362.92, nater_60d: 23877.27, nater_90d: 24403.05, nater_120d: 24937.97, nater_6x: 22860.00, nater_7d: 27186.00, nater_10_90_safra1: 26700.48, nater_50_50_safra2: 26151.54, nater_ex: 24668.23, banco: 27089.10 },
+            "57262": { nome: "CARREGADOR T70P", nater_30d: 15575.28, nater_60d: 15918.18, nater_90d: 16268.70, nater_120d: 16625.32, nater_6x: 15240.00, nater_7d: 17802.00, nater_10_90_safra1: 17800.32, nater_50_50_safra2: 17434.36, nater_ex: 16445.48, banco: 18112.74 },
+            "57293": { nome: "DISPERSOR SOLIDO T70P", nater_30d: 8955.28, nater_60d: 9152.43, nater_90d: 9353.96, nater_120d: 9559.01, nater_6x: 8762.50, nater_7d: 10579.08, nater_10_90_safra1: 10234.69, nater_50_50_safra2: 10023.76, nater_ex: 9455.61, banco: 10383.56 },
+
+            // Kit Agras T100 / T100P
+            "57252": { nome: "DRONE DJI AGRAS T100", nater_30d: 119305.21, nater_60d: 121931.80, nater_90d: 124616.75, nater_120d: 127348.39, nater_6x: 116737.00, nater_7d: 129508.40, nater_10_90_safra1: 136349.52, nater_50_50_safra2: 133547.09, nater_ex: 125970.90, banco: 138333.35 },
+            "57260": { nome: "BATERIA P/ DRONE AGRAS T100", nater_30d: 23362.92, nater_60d: 23877.27, nater_90d: 24403.05, nater_120d: 24937.97, nater_6x: 22860.00, nater_7d: 27186.00, nater_10_90_safra1: 26700.48, nater_50_50_safra2: 26151.54, nater_ex: 24668.23, banco: 27089.10 },
+            "57263": { nome: "CARREGADOR T100", nater_30d: 15575.28, nater_60d: 15918.18, nater_90d: 16268.70, nater_120d: 16625.32, nater_6x: 15240.00, nater_7d: 17802.00, nater_10_90_safra1: 17800.32, nater_50_50_safra2: 17434.36, nater_ex: 16445.48, banco: 18112.74 },
+            "57294": { nome: "DISPERSOR SOLIDO T100P", nater_30d: 15585.50, nater_60d: 15928.63, nater_90d: 16279.38, nater_120d: 16636.23, nater_6x: 15250.00, nater_7d: 17975.88, nater_10_90_safra1: 17811.98, nater_50_50_safra2: 17445.79, nater_ex: 16456.28, banco: 18071.25 },
+            "57295": { nome: "GERADOR GG20000D", nater_30d: 29226.89, nater_60d: 29870.34, nater_90d: 30528.08, nater_120d: 31197.27, nater_6x: 28597.74, nater_7d: 32359.27, nater_10_90_safra1: 33412.04, nater_50_50_safra2: 32725.15, nater_ex: 30859.82, banco: 33888.32 },
+
+            // Periféricos Comuns (Controle)
+            "50449": { nome: "BATERIA WB37", nater_30d: 843.54, nater_60d: 862.11, nater_90d: 881.10, nater_120d: 900.41, nater_6x: 825.38, nater_7d: 1025.80, nater_10_90_safra1: 964.31, nater_50_50_safra2: 944.43, nater_ex: 890.67, banco: 978.08 },
+            "50451": { nome: "HUB WB37", nater_30d: 997.60, nater_60d: 1019.57, nater_90d: 1042.02, nater_120d: 1064.86, nater_6x: 976.13, nater_7d: 1176.68, nater_10_90_safra1: 1139.55, nater_50_50_safra2: 1116.07, nater_ex: 1053.34, banco: 1156.71 },
+            "50450": { nome: "CARREGADOR 65W", nater_30d: 468.29, nater_60d: 478.60, nater_90d: 489.13, nater_120d: 499.86, nater_6x: 458.21, nater_7d: 782.00, nater_10_90_safra1: 534.91, nater_50_50_safra2: 523.91, nater_ex: 494.45, banco: 542.97 },
+
+            // Implementos extra (Damek)
+            "56772": { nome: "MISTURADOR DAMEK 200L", nater_30d: 5058.90, nater_60d: 5170.28, nater_90d: 5284.13, nater_120d: 5399.96, nater_6x: 4950.00, nater_7d: 5060.00, nater_10_90_safra1: 6159.21, nater_50_50_safra2: 5861.22, nater_ex: 5341.55, banco: 5651.42 },
+            "56279": { nome: "MISTURADOR DAMEK 120L", nater_30d: 3014.90, nater_60d: 3081.28, nater_90d: 3149.13, nater_120d: 3218.16, nater_6x: 2950.00, nater_7d: 3358.00, nater_10_90_safra1: 3670.41, nater_50_50_safra2: 3560.10, nater_ex: 3183.35, banco: 3368.02 }
         };
 
         const COMPOSICAO_KITS = {
